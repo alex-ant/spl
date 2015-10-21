@@ -30,7 +30,7 @@ func main() {
 		if *part <= len(result) {
 			fmt.Println(result[*part-1])
 		} else {
-			log.Fatal(errors.New("index outside result range"))
+			log.Fatal(errors.New("index outside result's range"))
 		}
 	} else {
 		log.Fatal(errors.New("both delimiter and part parameters shouldn't be empty"))
