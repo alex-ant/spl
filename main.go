@@ -25,8 +25,8 @@ func main() {
 		if stdInErr != nil {
 			log.Fatal(errors.New("unable to process STDIN, " + stdInErr.Error()))
 		}
-		bytesWithoutNewLine := strings.Split(string(stdInBytes), "\n")[0]
-		result = strings.Split(bytesWithoutNewLine, *delimiter)
+		inputWithoutNewLine := strings.Split(string(stdInBytes), "\n")[0]
+		result = strings.Split(inputWithoutNewLine, *delimiter)
 		if *part <= len(result) {
 			fmt.Println(result[*part-1])
 		} else {
