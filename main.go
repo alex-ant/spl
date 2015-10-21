@@ -23,7 +23,7 @@ func main() {
 	if *delimiter != "" && *part > 0 {
 		stdInBytes, stdInErr := ioutil.ReadAll(os.Stdin)
 		if stdInErr != nil {
-			log.Fatal(errors.New("unable to process STDIN"))
+			log.Fatal(errors.New("unable to process STDIN, " + stdInErr.Error()))
 		}
 		bytesWithoutNewLine := strings.Split(string(stdInBytes), "\n")[0]
 		result = strings.Split(bytesWithoutNewLine, *delimiter)
