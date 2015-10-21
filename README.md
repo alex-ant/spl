@@ -13,6 +13,8 @@ $ make
 $ sudo make install
 ```
 
+Binaries are also available in the release section!
+
 ### Usage
 
 ```sh
