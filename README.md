@@ -1,5 +1,7 @@
 # spl
 
+![split it](https://raw.githubusercontent.com/alex-ant/spl/master/split.jpg "split it")
+
 spl is a small command-line tool for splitting string passed over STDIN by another multicharacter string passed as a parameter.
 
 ### Installation
