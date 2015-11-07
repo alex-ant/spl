@@ -6,12 +6,7 @@ spl is a small command-line tool for splitting string passed over STDIN by anoth
 
 ### Installation
 
-```sh
-$ git clone git@github.com:alex-ant/spl.git
-$ cd spl
-$ make
-$ sudo make install
-```
+```go get github.com/alex-ant/spl```
 
 Binaries are also available in the release section!
 
