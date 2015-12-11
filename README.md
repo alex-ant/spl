@@ -63,7 +63,7 @@ $ echo -e "STRINGabcTO \n abcSPLIT" | spl -d abc -p 2
 TO
 SPLIT
 
-$ echo -e "STRINGabcTOabc11 \n abcSPLITabc22" | ./spl -d abc -p 2,3 -od /
+$ echo -e "STRINGabcTOabc11 \n abcSPLITabc22" | spl -d abc -p 2,3 -od /
 TO/11
 SPLIT/22
 ```
