@@ -3,9 +3,9 @@
 spl is a small command-line tool for splitting strings using a substring as a delimiter.
 
 ### Features
-* The input source can be either STDIN or a file.
-* You may request to output one or more parts for each input line.
-* A custom output delimiter can be set.
+* The input source can be either STDIN or a file
+* You may request to output one or more parts for each input line
+* A custom output delimiter can be set
 
 ### Installation
 
