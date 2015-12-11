@@ -7,13 +7,17 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
 var (
-	delimiter = flag.String("d", "", "delimiter substring")
-	part      = flag.Int("p", 0, "part to output (starting from 1)")
+	delimiter       = flag.String("d", "", "delimiter substring")
+	part            = flag.String("p", "", "part to output (starting from 1)")
+	outputDelimiter = flag.String("od", ",", "output delimiter")
 )
+
+var parts []int
 
 func process(data []byte) {
 	lines := strings.Split(string(data), "\n")
@@ -21,12 +25,16 @@ func process(data []byte) {
 	for i, line := range lines {
 		if strings.Contains(line, *delimiter) {
 			result := strings.Split(line, *delimiter)
-			if *part <= len(result) {
-				fmt.Println(result[*part-1])
-			} else {
-				// Printing an empty line if requested part is beyond result's slice.
-				fmt.Println()
+			var out string
+			for k, p := range parts {
+				if k > 0 {
+					out += *outputDelimiter
+				}
+				if p <= len(result) {
+					out += result[p-1]
+				}
 			}
+			fmt.Println(out)
 		} else {
 			// Printing the entire line if it doesn't contain the provided delimiter.
 			fmt.Println(line)
@@ -40,7 +48,16 @@ func process(data []byte) {
 func main() {
 	flag.Parse()
 
-	if *delimiter != "" && *part > 0 {
+	if *delimiter != "" && *part != "" {
+		partsStr := strings.Split(*part, ",")
+		for _, p := range partsStr {
+			partInt, partErr := strconv.Atoi(p)
+			if partErr != nil {
+				log.Fatal(partErr)
+			}
+			parts = append(parts, partInt)
+		}
+
 		filePath := flag.Arg(0)
 
 		if filePath != "" {
