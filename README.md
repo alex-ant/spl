@@ -6,6 +6,7 @@ spl is a small command-line tool for splitting strings using a substring as a de
 * The input source can be either STDIN or a file
 * You may request to output one or more parts for each input line
 * A custom output delimiter can be set
+* Provided delimiter can automatically be multiplied while splitting (so splitting string "123aaa456" by "a" with a flag -s you'll get two parts "123" and "456")
 
 ### Installation
 
@@ -49,6 +50,11 @@ $ spl -d aaa -p 3,2,1 -od '|' test.txt
 C|A|S
 |D|P
 E|B|L
+
+$ spl -d a -p 2 -s test.txt
+A
+D
+B
 ```
 
 Reading from STDIN:
@@ -66,4 +72,10 @@ SPLIT
 $ echo -e "STRINGabcTOabc11 \n abcSPLITabc22" | spl -d abc -p 2,3 -od /
 TO/11
 SPLIT/22
+
+$ echo "a    b c   d" | spl -d ' ' -p 2 -s
+b
+
+$ echo "a    b c   d" | spl -d ' ' -p 3 -s
+c
 ```
