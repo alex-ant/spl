@@ -15,6 +15,7 @@ var (
 	delimiter       = flag.String("d", "", "delimiter substring")
 	part            = flag.String("p", "", "part to output (starting from 1)")
 	outputDelimiter = flag.String("od", ",", "output delimiter")
+	sequence        = flag.Bool("s", false, "splits string by as long sequence of provided delimiter as found")
 )
 
 var parts []int
@@ -24,7 +25,18 @@ func process(data []byte) {
 
 	for i, line := range lines {
 		if strings.Contains(line, *delimiter) {
+
 			result := strings.Split(line, *delimiter)
+			if *sequence {
+				var resultTmp []string
+				for _, v := range result {
+					if v != "" {
+						resultTmp = append(resultTmp, v)
+					}
+				}
+				result = resultTmp
+			}
+
 			var out string
 			for k, p := range parts {
 				if k > 0 {
@@ -35,6 +47,7 @@ func process(data []byte) {
 				}
 			}
 			fmt.Println(out)
+
 		} else {
 			// Printing the entire line if it doesn't contain the provided delimiter.
 			fmt.Println(line)
