@@ -25,7 +25,6 @@ func process(data []byte) {
 
 	for i, line := range lines {
 		if strings.Contains(line, *delimiter) {
-
 			result := strings.Split(line, *delimiter)
 			if *sequence {
 				var resultTmp []string
@@ -47,7 +46,6 @@ func process(data []byte) {
 				}
 			}
 			fmt.Println(out)
-
 		} else {
 			// Printing the entire line if it doesn't contain the provided delimiter.
 			fmt.Println(line)
