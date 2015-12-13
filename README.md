@@ -1,6 +1,8 @@
 # spl
 
-spl is a small command-line tool for splitting strings using a substring as a delimiter.
+[![gorelease](https://dn-gorelease.qbox.me/gorelease-download-blue.svg)](https://gobuild.io/alex-ant/spl/master)
+
+A small command-line tool for splitting strings using a substring as a delimiter.
 
 ### Features
 * The input source can be either STDIN or a file
