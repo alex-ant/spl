@@ -12,7 +12,10 @@ A small command-line tool for splitting strings using a substring as a delimiter
 
 ### Installation
 
-```go get github.com/alex-ant/spl```
+```
+go get github.com/alex-ant/spl
+```
+Or in case you don't have Go installation, just follow the [gorelease](https://gobuild.io/alex-ant/spl/master) link to download binaries for your OS.
 
 ### Usage
 
