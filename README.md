@@ -1,6 +1,6 @@
 # spl
 
-[![gorelease](https://dn-gorelease.qbox.me/gorelease-download-blue.svg)](https://gobuild.io/alex-ant/spl/master)
+[![gorelease](https://dn-gorelease.qbox.me/gorelease-download-blue.svg)](https://gobuild.io/alex-ant/spl/master) [![Go Report Card Badge](http://goreportcard.com/badge/alex-ant/spl)](http://goreportcard.com/report/alex-ant/spl)
 
 A small command-line tool for splitting strings using a substring as a delimiter.
 
